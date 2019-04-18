@@ -1,0 +1,107 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template: 
+    "header header"  10%
+    "side   main" 1fr 
+    "footer footer " 10%
+    / 20% 80%;
+}
+
+header {
+  grid-area: header;
+  background-color: red;
+}
+
+aside {
+  grid-area: side;
+  background-color: aqua;
+}
+
+main {
+  grid-area: main;
+  background-color: pink;
+
+  display: grid;
+
+  grid-template: 
+    "main1 main2"  40%
+    "main3 main4"  40%
+    / 40% 40%;
+
+    grid-gap: 5%;
+    justify-content: center;
+    align-content: center;
+}
+
+main div {
+  background-color: white;
+}
+
+main div:first-child {
+  grid-area: main1;
+}
+
+main div:nth-child(2) {
+  grid-area: main2;
+}
+
+main div:nth-child(3) {
+  grid-area: main3;
+}
+
+main div:first-child {
+  grid-area: main4;
+}
+
+footer {
+  grid-area: footer;
+  background-color: purple;
+}
+
+@media screen and (min-width: 500px) and (max-width: 700px) {
+
+  main {
+
+  
+    grid-template: 
+      "main1"  20%
+      "main2"  20%
+      "main3"  20%
+      "main4"  20%
+      / 80%;
+  
+      grid-gap: 5%;
+      justify-content: center;
+      align-content: center;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+
+  body {
+    height: 150vh;
+    display: grid;
+    grid-template: 
+      "header" 10%
+      "main" 1fr
+      "side" 20%
+      "footer" 10%
+      / 100%;
+  }
+
+  main {
+    grid-template: 
+      "main1"  20%
+      "main2"  20%
+      "main3"  20%
+      "main4"  20%
+      / 80%;
+  
+      grid-gap: 5%;
+      justify-content: center;
+      align-content: center;
+  }
+
+}
